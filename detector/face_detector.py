@@ -21,7 +21,7 @@ class MTCNNFaceDetector():
     def create_mtcnn(self, sess, model_path):
         if not model_path:
             model_path, _ = os.path.split(os.path.realpath(__file__))
-	tf.compat.v1.disable_eager_execution()
+	tf.compat.v1.enable_eager_execution()
         with tf.compat.v1.variable_scope('pnet'):
             data = tf.compat.v1.placeholder(tf.float32, (None,None,None,3), name='input')
             pnet = mtcnn_detect_face.PNet({'data':data})
