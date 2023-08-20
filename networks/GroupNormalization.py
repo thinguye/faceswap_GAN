@@ -1,4 +1,4 @@
-from keras.engine import Layer, InputSpec
+from tensorflow.keras.layers import Layer, InputSpec
 from keras import initializers, regularizers
 from keras import backend as K
 from keras.utils import conv_utils
