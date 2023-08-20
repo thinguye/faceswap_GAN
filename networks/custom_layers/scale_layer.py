@@ -1,4 +1,4 @@
-from tensorflow.keras.layers import Layerker
+from tensorflow.keras.layers import Layer
 from tensorflow.keras.engine import InputSpec
 from keras import backend as K
 from keras import initializers
