@@ -1,5 +1,5 @@
 from keras.layers import Lambda, concatenate
-from tensorflow.distributions import Beta
+import tensorflow_probability import Beta
 from .instance_normalization import InstanceNormalization
 import keras.backend as K
 import tensorflow as tf
