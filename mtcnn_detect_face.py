@@ -196,7 +196,7 @@ class Network(object):
                 feed_in, dim = (inp, input_shape[-1].value)
             weights = self.make_var('weights', shape=[dim, num_out])
             biases = self.make_var('biases', [num_out])
-            op = tf.nn.relu_layer if relu else tf.nn.xw_plus_b
+            op = tf.nn.relu_layer if relu else tf.compat.v1.nn.xw_plus_b
             fc = op(feed_in, weights, biases, name=name)
             return fc
 
