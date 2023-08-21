@@ -5,6 +5,7 @@ import numpy as np
 import cv2
 import os
 
+tf.compat.v1.disable_eager_execution()
 class MTCNNFaceDetector():
     """
     This class load the MTCNN network and perform face detection.
@@ -19,7 +20,7 @@ class MTCNNFaceDetector():
         self.create_mtcnn(sess, model_path)
         
     def create_mtcnn(self, sess, model_path):
-	tf.compat.v1.disable_eager_execution()
+	
         if not model_path:
             model_path, _ = os.path.split(os.path.realpath(__file__))
         with tf.compat.v1.variable_scope('pnet'):
