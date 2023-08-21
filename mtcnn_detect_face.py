@@ -90,7 +90,7 @@ class Network(object):
             with tf.compat.v1.variable_scope(op_name, reuse=True):
                 for param_name, data in iteritems(data_dict[op_name]):
                     try:
-                        var = tf.get_variable(param_name)
+                        var = tf.compat.v1.get_variable(param_name)
                         session.run(var.assign(data))
                     except ValueError:
                         if not ignore_missing:
@@ -124,7 +124,7 @@ class Network(object):
 
     def make_var(self, name, shape):
         """Creates a new TensorFlow variable."""
-        return tf.get_variable(name, shape, trainable=self.trainable)
+        return tf.compat.v1.get_variable(name, shape, trainable=self.trainable)
 
     def validate_padding(self, padding):
         """Verifies that the padding is one of the supported ones."""
